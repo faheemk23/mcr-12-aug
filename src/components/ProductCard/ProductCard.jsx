@@ -7,7 +7,7 @@ export default function ProductCard({ product }) {
   return (
     <tr className="product">
       <td>
-        <img src={imageUrl} />
+        <img src={imageUrl} alt={name} />
       </td>
       <td>
         <Link to="#">{name}</Link>

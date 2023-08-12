@@ -60,7 +60,15 @@ export default function ProductManagement() {
     );
     if (isValid) {
       setErrorMessage("");
-      setInventory((prev) => [...prev, userInput]);
+      setInventory((prev) => [
+        ...prev,
+        {
+          ...userInput,
+          price: parseInt(userInput.price),
+          stock: parseInt(userInput.stock),
+          delivered: parseInt(userInput.delivered),
+        },
+      ]);
     }
   };
 
