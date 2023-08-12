@@ -1,5 +1,5 @@
 .page {
-  border: solid;
+  border-left: 2px solid rgba(0, 0, 0, 0.2);
   padding: 1rem;
 }
 
