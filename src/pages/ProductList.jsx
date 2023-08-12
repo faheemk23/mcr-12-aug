@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 
 import ProductCard from "../components/ProductCard/ProductCard";
 import ProductListNav from "../components/ProductListNav/ProductListNav";
@@ -6,12 +6,7 @@ import { InventoryContext } from "../contexts/InventoryContext";
 import "./Pages.css";
 
 export default function ProductList() {
-  const [filters, setFilters] = useState({
-    department: "All Departments",
-    lowStock: false,
-    sortBy: "Name",
-  });
-  const { inventory } = useContext(InventoryContext);
+  const { inventory, filters, setFilters } = useContext(InventoryContext);
 
   const { department, lowStock, sortBy } = filters;
 

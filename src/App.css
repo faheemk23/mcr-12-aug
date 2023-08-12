@@ -11,3 +11,24 @@
 .pages-grid {
   grid-area: pages-grid;
 }
+
+.flex {
+  display: flex;
+  gap: 1rem;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.small-card {
+  background-color: #f3f3f3;
+  width: 180px;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  font-size: x-large;
+  border-radius: 1rem;
+}

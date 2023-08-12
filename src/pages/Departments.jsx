@@ -1,10 +1,13 @@
 import { useContext } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { InventoryContext } from "../contexts/InventoryContext";
 import "./Pages.css";
 
 export default function Departments() {
-  const { inventory } = useContext(InventoryContext);
+  const { inventory, setFilters } = useContext(InventoryContext);
+
+  const navigate = useNavigate();
 
   const departments =
     inventory?.reduce(
@@ -14,9 +17,18 @@ export default function Departments() {
     ) ?? [];
 
   return (
-    <div className="page">
+    <div className="page flex">
       {departments.map((department) => (
-        <div key={department}>{department}</div>
+        <div
+          className="small-card pointer"
+          key={department}
+          onClick={() => {
+            setFilters((prev) => ({ ...prev, department: department }));
+            navigate("/productlist");
+          }}
+        >
+          {department}
+        </div>
       ))}
     </div>
   );

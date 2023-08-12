@@ -12,16 +12,16 @@ export default function Dashboard() {
   const { totalStock, totalDelivered, lowStockItems } = data ?? {};
 
   return (
-    <div className="page">
-      <div>
+    <div className="page flex">
+      <div className="small-card">
         {totalStock}
         <div>Total Stock</div>
       </div>
-      <div>
+      <div className="small-card">
         {totalDelivered}
         <div>Total Delivered</div>
       </div>
-      <div>
+      <div className="small-card">
         {lowStockItems}
         <div>Low Stock Items</div>
       </div>
