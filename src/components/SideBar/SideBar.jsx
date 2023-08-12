@@ -7,6 +7,7 @@ export default function SideBar() {
       <NavLink to="/">Dashboard</NavLink>
       <NavLink to="/departments">Departments</NavLink>
       <NavLink to="productlist">Products</NavLink>
+      <NavLink to="productmanagement">Add new</NavLink>
     </div>
   );
 }
