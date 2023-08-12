@@ -68,23 +68,25 @@ export default function ProductManagement() {
           stock: parseInt(userInput.stock),
           delivered: parseInt(userInput.delivered),
         },
-        setUserInput({
-          department: "Select Department",
-          name: "",
-          description: "",
-          price: 0,
-          stock: 0,
-          sku: "",
-          supplier: "",
-          delivered: 0,
-          imageUrl:
-            "https://res.cloudinary.com/dlzwbrjjs/image/upload/v1691516455/placeholder-rgb-color-icon-vector-32173552_vbbhay.jpg",
-        }),
+        // setTimeout(() => {
+        //   setUserInput({
+        //     id: uuid(),
+        //     department: "Select Department",
+        //     name: "",
+        //     description: "",
+        //     price: 0,
+        //     stock: 0,
+        //     sku: "",
+        //     supplier: "",
+        //     delivered: 0,
+        //     imageUrl:
+        //       "https://res.cloudinary.com/dlzwbrjjs/image/upload/v1691516455/placeholder-rgb-color-icon-vector-32173552_vbbhay.jpg",
+        //   });
+        // }, 50),
       ]);
     }
   };
 
-  console.log({ userInput });
   return (
     <div className="page ">
       <h1>Add New Product</h1>
