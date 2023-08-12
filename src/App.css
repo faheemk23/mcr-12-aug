@@ -1,0 +1,13 @@
+.app {
+  display: grid;
+  grid-template-areas: "side-bar-grid pages-grid";
+  grid-template-columns: 1fr 4fr;
+}
+
+.side-bar-grid {
+  grid-area: side-bar-grid;
+}
+
+.pages-grid {
+  grid-area: pages-grid;
+}
