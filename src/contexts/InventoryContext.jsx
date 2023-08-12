@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useRef, useState } from "react";
 
 import { inventoryData } from "../data/data";
 
@@ -11,6 +11,31 @@ export const InventoryProvider = ({ children }) => {
     lowStock: false,
     sortBy: "Name",
   });
+
+  const firstRender = useRef(true);
+
+  useEffect(() => {
+    if (firstRender.current) {
+      const filters = JSON.parse(localStorage.getItem("filters"));
+      const inventory = JSON.parse(localStorage.getItem("inventory"));
+
+      if (filters) {
+        setFilters(filters);
+      }
+      if (inventory) {
+        setInventory(inventory);
+      }
+      firstRender.current = false;
+    }
+
+    localStorage.setItem("filters", JSON.stringify(filters));
+    localStorage.setItem("inventory", JSON.stringify(inventory));
+  }, [filters, inventory]);
+
+  // useEffect(() => {
+  //   localStorage.setItem("filters", JSON.stringify(filters));
+  //   localStorage.setItem("inventory", JSON.stringify(inventory));
+  // }, [filters, inventory]);
 
   return (
     <InventoryContext.Provider

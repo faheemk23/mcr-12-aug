@@ -38,6 +38,7 @@ export default function ProductListNav({ filters, setFilters }) {
           type="checkbox"
           id="lowStock"
           value={lowStock}
+          checked={lowStock}
           onChange={handleFilterInput}
         />
         <label htmlFor="low-stock-checkbox">Low Stock Items</label>

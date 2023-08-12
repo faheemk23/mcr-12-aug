@@ -48,17 +48,12 @@ export default function ProductList() {
           </tr>
         </thead>
         <tbody>
-          {filteredInventory.length === 0 ? (
-            <h2>Sorry, no products match!</h2>
-          ) : (
-            <>
-              {filteredInventory.map((product) => (
-                <ProductCard key={product.id} product={product} />
-              ))}
-            </>
-          )}
+          {filteredInventory.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </tbody>
       </table>
+      {filteredInventory.length === 0 && <h2>Sorry, no products match!</h2>}
     </div>
   );
 }
